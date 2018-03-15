@@ -13,6 +13,7 @@ self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open('lazada-cache-v1').then(function (cache) {
       return cache.addAll([
+        '/',
         '/index.html',
         'https://unpkg.com/web-rax-framework@0.5.4/dist/framework.web.js',
         '/build/pages/index/index.bundle.js'
