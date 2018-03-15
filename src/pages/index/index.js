@@ -8,6 +8,10 @@ import CartScreen from '../../pages/cart/index';
 import WishListScreen from '../../pages/wishlist/index';
 import AccountScreen from '../../pages/account/index';
 import ItemDetailScreen from '../../pages/item_detail/index';
+import CommentScreen from "../comment";
+
+const INDEX_PATH = location.pathname + location.search;
+
 // function loadPage(pageName) {
 //   return new Promise((resolve, reject) => {
 //     let loadFunc;
@@ -42,7 +46,7 @@ import ItemDetailScreen from '../../pages/item_detail/index';
 const tabRouterConfig = {
   Home: {
     screen: HomeScreen,
-    path: genPath('index')
+    path: INDEX_PATH
   },
   Search: {
     screen: SearchScreen,
@@ -65,8 +69,8 @@ const tabRouterConfig = {
 const HomeNavigator = TabNavigator(tabRouterConfig, {
   navigationOptions: ({navigation}) => {
     return {
-      header: null
-      // headerTitle: navigation.state.routeName
+      header: null,
+      headerTitle: navigation.state.routeName
     };
   },
   tabBarComponent: BottomBar
@@ -76,11 +80,15 @@ const HomeNavigator = TabNavigator(tabRouterConfig, {
 const stackRouterConfig = {
   Home: {
     screen: HomeNavigator,
-    path: genPath('index')
+    path: INDEX_PATH
   },
   ItemDetail: {
-    screen:ItemDetailScreen,
+    screen: ItemDetailScreen,
     path: genPath('items/:itemId')
+  },
+  Comment: {
+    screen: CommentScreen,
+    path: genPath('items/:itemId/comment')
   }
 };
 

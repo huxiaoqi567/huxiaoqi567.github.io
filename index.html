@@ -29,7 +29,7 @@
   if ('serviceWorker' in navigator) {
 
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('sw.js')
+      navigator.serviceWorker.register('sw.js?v=2')
         .then(function (registration) {
 
           // 注册成功
@@ -42,6 +42,17 @@
         });
     });
   }
+</script>
+<script>
+  Notification.requestPermission( function(status) {
+    console.log(status); // 仅当值为 "granted" 时显示通知
+    if(status === 'granted') {
+      var n = new Notification("title", {body: "notification body",icon:'https://gw.alicdn.com/tfs/TB11pN5dH9YBuNjy0FgXXcxcXXa-64-64.png'}); // 显示通知
+        n.onclick = function(){
+          alert('clicked');
+        }
+    }
+  });
 </script>
 </body>
 </html>

@@ -2,7 +2,6 @@ import {createElement, Component} from 'rax';
 import View from 'rax-view';
 import Text from 'rax-text';
 import Image from 'rax-image';
-import {Link} from '@ali/rax-navigation';
 import ScrollView from 'rax-scrollview';
 import Header from '../../mods/Header';
 import Footer from '../../mods/Footer';
@@ -12,6 +11,7 @@ import Scroller from '../../mods/Scroller';
 import {intl, I18nView} from '@ali/rax-intl';
 import styles from '../SimpleApp.js';
 import {genPath} from '../../mods/util';
+import {Link} from '@ali/rax-navigation';
 
 
 intl.init(require('../../mods/rax-locale/index'));
@@ -39,7 +39,7 @@ class App extends Component {
         </View>
 
         <I18nView style={{marginBottom: 14, flexDirection: 'row'}}>
-          <Link href={'https://m.taobao.com/?_wx_tpl=http://groups.alidemo.cn/raxjs/demo-market/demo/archive/lazada.list.js'}>
+          <Link href={genPath('items/2')}>
             <Image source={{
               uri: 'https://gw.alicdn.com/tfs/TB1Z.2kaUgQMeJjy0FgXXc5dXXa-368-261.png'
             }}
@@ -52,7 +52,7 @@ class App extends Component {
             width: 14,
             height: 261,
           }} />
-          <Link href={'https://m.taobao.com/?_wx_tpl=http://groups.alidemo.cn/raxjs/demo-market/demo/archive/lazada.list.js'}>
+          <Link  href={genPath('items/3')}>
             <Image source={{
               uri: 'https://gw.alicdn.com/tfs/TB1n9P7aEtWMKJjy0FaXXcCDpXa-367-261.png'
             }}
@@ -64,7 +64,7 @@ class App extends Component {
         </I18nView>
 
         <I18nView style={{marginBottom: 14, flexDirection: 'row'}}>
-          <Link href={'https://m.taobao.com/?_wx_tpl=http://groups.alidemo.cn/raxjs/demo-market/demo/archive/lazada.list.js'}>
+          <Link  href={genPath('items/4')}>
             <Image source={{
               uri: 'https://gw.alicdn.com/tfs/TB1fnrfaRUSMeJjSspfXXX0VFXa-368-259.png'
             }}
@@ -77,7 +77,7 @@ class App extends Component {
             width: 14,
             height: 261,
           }} />
-          <Link href={'https://m.taobao.com/?_wx_tpl=http://groups.alidemo.cn/raxjs/demo-market/demo/archive/lazada.list.js'}>
+          <Link  href={genPath('items/5')}>
             <Image source={{
               uri: 'https://gw.alicdn.com/tfs/TB1vBTiaUgQMeJjy0FfXXbddXXa-367-259.png'
             }}
@@ -89,7 +89,7 @@ class App extends Component {
         </I18nView>
 
         <I18nView style={{marginBottom: 14, flexDirection: 'row'}}>
-          <Link href={'https://m.taobao.com/?_wx_tpl=http://groups.alidemo.cn/raxjs/demo-market/demo/archive/lazada.list.js'}>
+          <Link  href={genPath('items/5')}>
             <Image source={{
               uri: 'https://gw.alicdn.com/tfs/TB1KmnkaMoQMeJjy1XaXXcSsFXa-239-238.png'
             }}
@@ -102,7 +102,7 @@ class App extends Component {
             width: 14,
             height: 238,
           }} />
-          <Link href={'https://m.taobao.com/?_wx_tpl=http://groups.alidemo.cn/raxjs/demo-market/demo/archive/lazada.list.js'}>
+          <Link  href={genPath('items/6')}>
             <Image source={{
               uri: 'https://gw.alicdn.com/tfs/TB1kOPjaMsSMeJjSspcXXXjFXXa-240-238.png'
             }}
@@ -115,7 +115,7 @@ class App extends Component {
             width: 14,
             height: 238,
           }} />
-          <Link href={'https://m.taobao.com/?_wx_tpl=http://groups.alidemo.cn/raxjs/demo-market/demo/archive/lazada.list.js'}>
+          <Link  href={genPath('items/7')}>
             <Image source={{
               uri: 'https://gw.alicdn.com/tfs/TB1Rb6iaTZRMeJjSspnXXcJdFXa-239-238.png'
             }}
@@ -155,7 +155,7 @@ class App extends Component {
             }} />
         </View>
 
-        <View style={{
+        <Link  href={genPath('items/11')} style={{
           marginBottom: 14,
         }}>
           <Image source={{
@@ -165,7 +165,7 @@ class App extends Component {
               width: 750,
               height: 206,
             }} />
-        </View>
+        </Link>
 
         <Slider />
         <I18nView style={{...styles.mod2, flexDirection: 'row'}}><Text style={styles.boxtext2} >{intl.getText('t1')}</Text></I18nView>

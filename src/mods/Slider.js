@@ -3,6 +3,8 @@ import View from 'rax-view';
 import Text from 'rax-text';
 import Image from 'rax-image';
 import Slider from 'rax-slider';
+import {Link} from '@ali/rax-navigation';
+import {genPath} from "./util";
 
 class SliderDemo extends Component {
   constructor(props) {
@@ -22,24 +24,24 @@ class SliderDemo extends Component {
         paginationStyle={styles.paginationStyle}
         autoplayTimeout={3000}
         onChange={this.onchange}>
-        <View style={styles.itemWrap}>
+        <Link  href={genPath('items/12')} style={styles.itemWrap}>
           <Image style={styles.image} source={{uri: '//my-live-03.slatic.net/cms/teasers/api/categories/720x389_Merdeka_140817.jpg'}} />
-        </View>
-        <View style={styles.itemWrap}>
+        </Link>
+        <Link  href={genPath('items/13')} style={styles.itemWrap}>
           <Image style={styles.image} source={{uri: '//my-live-01.slatic.net/cms/teasers/api/categories/MAS_MBB_030717.jpg'}} />
-        </View>
-        <View style={styles.itemWrap}>
+        </Link>
+        <View href={genPath('items/14')} style={styles.itemWrap}>
           <Image style={styles.image} source={{uri: '//my-live-01.slatic.net/cms/teasers/api/categories/720x289_MegaSportsExpo_31st.jpg'}} />
         </View>
-        <View style={styles.itemWrap}>
+        <Link href={genPath('items/15')} style={styles.itemWrap}>
           <Image style={styles.image} source={{uri: '//my-live-02.slatic.net/cms/teasers/api/categories/TBC_MAS.jpg'}} />
-        </View>
-        <View style={styles.itemWrap}>
+        </Link>
+        <Link href={genPath('items/16')} style={styles.itemWrap}>
           <Image style={styles.image} source={{uri: '//my-live-02.slatic.net/cms/teasers/api/categories/electrifying-deals2a.jpg'}} />
-        </View>
-        <View style={styles.itemWrap}>
+        </Link>
+        <Link href={genPath('items/17')} style={styles.itemWrap}>
           <Image style={styles.image} source={{uri: '//my-live-03.slatic.net/cms/teasers/api/categories/720x389_Merdeka_140817.jpg'}} />
-        </View>
+        </Link>
       </Slider>
     );
   }
