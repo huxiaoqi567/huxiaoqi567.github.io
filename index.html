@@ -14,7 +14,7 @@
     <link rel="manifest" href="manifest.json"/>
 
     <title>Lazada Demo</title>
-    <script src="//unpkg.com/web-rax-framework@0.5.4/dist/framework.web.js"></script>
+    <script src="https://unpkg.com/web-rax-framework@0.5.4/dist/framework.web.js"></script>
 
     <style>
         *{
@@ -24,7 +24,24 @@
     </style>
 </head>
 <body>
-<!--<script src="https://huxiaoqi567.github.io/build/index.js"></script>-->
 <script src="/build/pages/index/index.bundle.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js')
+        .then(function (registration) {
+
+          // 注册成功
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(function (err) {
+
+          // 注册失败:(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+</script>
 </body>
 </html>
