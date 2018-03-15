@@ -5,11 +5,11 @@ module.exports = {
     new webpack.ProgressPlugin(),
   ],
   entry: {
-    index: './src/pages/index/index.js'
+    'pages/index/index': './src/pages/index/index.js'
   },
   output: {
     path: __dirname + '/build/',
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     libraryTarget:'umd'
   },
   module: {
