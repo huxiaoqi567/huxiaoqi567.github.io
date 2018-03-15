@@ -3,14 +3,10 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const RaxWebpackPlugin = require('rax-webpack-plugin');
 const fs = require('fs');
+const config = require('./webpack.config');
 const colors = require('chalk');
 
 function getEntries() {
-
-  return {
-    'build/pages/index/index.bundle':'./src/pages/index/index.js'
-  }
-
   let result = {};
   let dirs = fs.readdirSync(`${__dirname}/src/pages/`);
   dirs.forEach((dirName) => {
@@ -24,36 +20,7 @@ function getEntries() {
   return result;
 }
 
-var config = {
-  target: 'node',
-  // devtool: '#inline-source-map',
-  entry: getEntries(),
-  output: {
-    path: __dirname,
-    filename: '[name].js'
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-    }),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.ProgressPlugin(),
-    new RaxWebpackPlugin({
-      frameworkComment: true,
-      platforms: []
-    }),
-  ],
-  module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      //exclude: /(node_modules|bower_components)/,
-      loader: 'babel-loader', // 'babel-loader' is also a legal name to reference
-      query: {
-        presets: ['es2015', 'rax']
-      }
-    }]
-  }
-};
+
 
 var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
