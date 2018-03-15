@@ -8,7 +8,7 @@ const colors = require('chalk');
 function getEntries() {
 
   return {
-    'build/pages/index.bundle':'./src/pages/index/index.js'
+    'build/pages/index/index.bundle':'./src/pages/index/index.js'
   }
 
   let result = {};

@@ -8,7 +8,6 @@ import CartScreen from '../../pages/cart/index';
 import WishListScreen from '../../pages/wishlist/index';
 import AccountScreen from '../../pages/account/index';
 import ItemDetailScreen from '../../pages/item_detail/index';
-
 // function loadPage(pageName) {
 //   return new Promise((resolve, reject) => {
 //     let loadFunc;
