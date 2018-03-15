@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: __dirname + '/build/',
     filename: '[name].bundle.js',
-    libraryTarget:'umd'
+    // libraryTarget:'umd'
   },
   module: {
     loaders: [
