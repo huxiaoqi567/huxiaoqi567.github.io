@@ -1,8 +1,13 @@
 const webpack = require('webpack');
+const RaxWebpackPlugin = require('rax-webpack-plugin');
 
 module.exports = {
   plugins: [
     new webpack.ProgressPlugin(),
+    new RaxWebpackPlugin({
+      frameworkComment: true,
+      platforms: []
+    }),
   ],
   entry: {
     'pages/index/index': './src/pages/index/index.js'
