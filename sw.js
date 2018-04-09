@@ -6,7 +6,7 @@ var self = this;
 // });
 
 
-const VERSION = 'lazada-cache-v6';
+const VERSION = 'lazada-cache-v7';
 
 
 self.addEventListener('install', function (event) {

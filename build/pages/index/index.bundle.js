@@ -27567,6 +27567,15 @@ var App = function (_Component) {
           } },
         (0, _rax.createElement)(
           _raxView2.default,
+          null,
+          (0, _rax.createElement)(
+            _raxText2.default,
+            null,
+            'Hello'
+          )
+        ),
+        (0, _rax.createElement)(
+          _raxView2.default,
           { style: {
               marginTop: 14,
               marginBottom: 14
