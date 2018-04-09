@@ -23,6 +23,9 @@ class App extends Component {
       <ScrollView ref={() => {
         this.scrollview = this;
       }}>
+        <View>
+          <Text>Hello</Text>
+        </View>
         <View style={{
           marginTop: 14,
           marginBottom: 14,
