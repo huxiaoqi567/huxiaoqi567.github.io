@@ -6,32 +6,44 @@ var self = this;
 // });
 
 
-
+const VERSION = 'lazada-cache-v6';
 
 
 self.addEventListener('install', function (event) {
+  console.error('install')
   event.waitUntil(
-    caches.open('lazada-cache-v1').then(function (cache) {
+    caches.open(VERSION).then(function (cache) {
+      console.error('cache:',cache)
       return cache.addAll([
         '/',
         '/index.html',
         'https://unpkg.com/web-rax-framework@0.5.4/dist/framework.web.js',
         '/build/pages/index/index.bundle.js'
-      ]).then(function(){
-        return self.skipWaiting();
-      });
+      ])
     })
   );
 });
 
 
 self.addEventListener('activate', function(event) {
-
-  event.waitUntil(self.clients.claim());
+  //event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          // 如果当前版本和缓存版本不一致
+          if (cacheName !== VERSION) {
+            console.error('delete cache:',cacheName)
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });
 
 self.addEventListener('fetch', function(event) {
-  console.log('fetch...')
+  console.error('fetch :',event.request)
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
@@ -39,9 +51,30 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-self.addEventListener('push', function(event) {
-  console.log('push........')
-});
+//接收webpush
+// this.addEventListener('push', function(event) {
+//   console.log('[Service Worker] Push Received.');
+//   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+//
+//   let notificationData = event.data.json();
+//   const title = notificationData.title;
+//   // 可以发个消息通知页面
+//   //util.postMessage(notificationData);
+//   // 弹消息框
+//   event.waitUntil(self.registration.showNotification(title, notificationData));
+// });
+
+
+//点击push信息
+// this.addEventListener('notificationclick', function(event) {
+//   console.log('[Service Worker] Notification click Received.');
+//
+//   let notification = event.notification;
+//   notification.close();
+//   event.waitUntil(
+//     clients.openWindow(notification.data.url)
+//   );
+// });
 
 // this.addEventListener('fetch', function (event) {
 //   console.log('*****')

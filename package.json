@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "node webpack.dev.config.js",
-    "build": "node webpack.config.js",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +33,9 @@
     "chalk": "^2.3.0",
     "css-loader": "^0.28.9",
     "file-loader": "^1.1.6",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "koa-xtpl": "^2.1.1",
     "postcss-plugin-px2rem": "^0.7.0",
     "postcss-plugin-weex": "^0.1.6",
     "rax": "0.x.x",
@@ -49,6 +52,8 @@
     "rax-view": "0.x.x",
     "rax-webpack-plugin": "^0.5.2",
     "url": "^0.11.0",
+    "urlb64touint8array": "^1.0.3",
+    "web-push": "^3.3.0",
     "webpack": "^3.8.1",
     "webpack-concat-plugin": "^2.4.2",
     "webpack-dev-server": "^2.7.1",

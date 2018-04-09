@@ -27,6 +27,11 @@ var server = new WebpackDevServer(compiler, {
   publicPath: config.output.publicPath,
   public: '0.0.0.0',
   disableHostCheck: true,
+  https:{
+    key: fs.readFileSync(__dirname+"/server.key"),
+    cert: fs.readFileSync(__dirname+"/server.crt"),
+    ca:fs.readFileSync(__dirname+"/ca.crt")
+  },
   stats: {
     colors: true,
     chunks: false,
