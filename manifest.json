@@ -1,6 +1,7 @@
 {
   "name": "手机淘宝",
   "short_name":"手机淘宝",
+  "description":"淘宝网触屏版",
   "icons": [
     {
       "src": "https://gw.alicdn.com/tps/i2/TB1nmqyFFXXXXcQbFXXE5jB3XXX-114-114.png",
