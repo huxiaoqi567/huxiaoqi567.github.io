@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
 
-  var version = '8';
+  var version = '9';
 
   // window.addEventListener('load', function () {
     console.error('regist version:',version)

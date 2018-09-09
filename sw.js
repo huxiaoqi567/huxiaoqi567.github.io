@@ -6,7 +6,7 @@ var self = this;
 // });
 
 
-const VERSION = 'cache-v8';
+const VERSION = 'cache-v9';
 
 
 self.addEventListener('install', function (event) {
