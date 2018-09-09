@@ -1,8 +1,10 @@
 if ('serviceWorker' in navigator) {
 
+  var version = '8';
+
   // window.addEventListener('load', function () {
-    console.error('regist')
-    navigator.serviceWorker.register('sw.js?v=7')
+    console.error('regist version:',version)
+    navigator.serviceWorker.register('sw.js?v='+version)
       .then(function (registration) {
         // 注册成功
         console.log('ServiceWorker registration successful with scope: ', registration.scope);

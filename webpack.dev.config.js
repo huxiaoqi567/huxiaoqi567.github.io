@@ -25,7 +25,7 @@ function getEntries() {
 var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
   publicPath: config.output.publicPath,
-  public: '0.0.0.0',
+  port: '0.0.0.0',
   disableHostCheck: true,
   // https:{
   //   key: fs.readFileSync(__dirname+"/server.key"),

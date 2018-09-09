@@ -6,7 +6,7 @@ var self = this;
 // });
 
 
-const VERSION = 'lazada-cache-v7';
+const VERSION = 'cache-v8';
 
 
 self.addEventListener('install', function (event) {
@@ -43,7 +43,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  console.error('fetch :',event.request)
+  // console.error('fetch :',event.request)
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
