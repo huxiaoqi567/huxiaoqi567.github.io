@@ -1,14 +1,15 @@
 {
   "name": "手机淘宝",
   "short_name":"手机淘宝",
-  "icon": [
+  "icons": [
     {
       "src": "https://gw.alicdn.com/tps/i2/TB1nmqyFFXXXXcQbFXXE5jB3XXX-114-114.png",
-      "sizes": "114x114",
+      "sizes": "114x114 128x128 144x144",
       "type": "image/png"
     }
   ],
   "background_color":"#ff6600",
+  "theme_color":"#ff6600",
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait"
