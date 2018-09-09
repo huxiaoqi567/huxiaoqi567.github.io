@@ -9,6 +9,8 @@ var self = this;
 const VERSION = 'cache-v9';
 
 
+
+
 self.addEventListener('install', function (event) {
   console.error('install')
   event.waitUntil(
