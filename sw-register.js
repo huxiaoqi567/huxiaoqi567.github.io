@@ -1,3 +1,4 @@
+
 function registerServiceWorker() {
 
   return new Promise((resolve) => {
@@ -31,6 +32,7 @@ let promiseChain = new Promise((resolve, reject) => {
   }
 })
   .then(result => {
+    console.error('result:',result)
     if (result === 'granted') {
       execute();
     }
@@ -42,6 +44,8 @@ let promiseChain = new Promise((resolve, reject) => {
 
 function execute() {
   registerServiceWorker().then(registration => {
-    registration.showNotification('Hello World!');
+    if('PushManager' in window) {
+      registration.showNotification('Hello World!');
+    }
   });
 }
