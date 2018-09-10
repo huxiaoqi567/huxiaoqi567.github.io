@@ -1,4 +1,6 @@
 
+alert('PushManager' in window)
+
 function registerServiceWorker() {
 
   return new Promise((resolve) => {
