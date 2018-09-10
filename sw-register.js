@@ -5,7 +5,7 @@ function registerServiceWorker() {
 
   return new Promise((resolve) => {
     if ('serviceWorker' in navigator) {
-      var version = '9';
+      var version = '10';
       console.error('regist version:', version)
       navigator.serviceWorker.register('sw.js?v=' + version)
         .then(function (registration) {

@@ -6,7 +6,7 @@ var self = this;
 // });
 
 
-const VERSION = 'cache-v9';
+const VERSION = 'cache-v10';
 
 
 
