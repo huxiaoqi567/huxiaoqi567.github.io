@@ -10,6 +10,7 @@ const VERSION = 'cache-v10';
 
 
 
+
 self.addEventListener('install', function (event) {
   console.error('install')
   event.waitUntil(
