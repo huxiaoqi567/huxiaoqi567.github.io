@@ -1,6 +1,5 @@
 
 // alert('PushManager' in window)
-alert('serviceWorker:'+('serviceWorker' in navigator))
 
 function registerServiceWorker() {
 
