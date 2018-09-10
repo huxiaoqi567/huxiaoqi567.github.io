@@ -10,7 +10,6 @@ const VERSION = 'cache-v9';
 
 
 
-
 self.addEventListener('install', function (event) {
   console.error('install')
   event.waitUntil(
@@ -111,3 +110,29 @@ self.addEventListener('fetch', function(event) {
 //     })
 //   );
 // });
+
+// modify isClientFocused
+function isClientFocused() {
+  return clients.matchAll({
+    type: 'window',
+    includeUncontrolled: true
+  })
+    .then(windowClients => {
+      let clientIsFocused = false;
+
+      for (let i = 0, max = windowClients.length; i < max; i++) {
+        if (windowClients[i].focused) {
+          clientIsFocused = true;
+          break;
+        }
+      }
+
+      // modify here
+      return {clientIsFocused, windowClients};
+    });
+}
+
+isClientFocused().then(({clientIsFocused, windowClients})=>{
+  console.log(clientIsFocused, windowClients)
+})
+
